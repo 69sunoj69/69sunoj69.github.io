@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>YOUR NAME | Civil Engineering & Python</title>
+  <title>YOUR NAME | Civil Engineer & Python Developer</title>
   <meta name="description" content="Portfolio of a civil engineering student who codes in Python.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,118 +12,152 @@
 </head>
 <body>
 
-  <header class="nav">
-    <a href="#top" class="brand">YOUR NAME</a>
-    <nav>
-      <a href="#work">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header class="nav" id="nav">
+  <a href="#top" class="brand">YOUR NAME</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#work">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#lab">Lab</a>
+    <a href="#contact" class="nav-cta">Hire me</a>
+  </nav>
+</header>
 
-  <main id="top">
+<main id="top">
 
-    <!-- HERO -->
-    <section class="hero">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
       <div class="hero-text">
-        <h1>I design structures<br>and write the code<br>that checks them.</h1>
-        <p>Hi, I'm YOUR NAME, a civil engineering student learning Python to make engineering calculations faster, clearer and less error-prone.</p>
-        <a class="btn" href="#work">See my projects</a>
-      </div>
-
-      <!-- Interactive beam calculator: the memorable part -->
-      <div class="calc" aria-label="Beam deflection calculator">
-        <div class="calc-title">Try it: beam deflection</div>
-        <pre class="code"><code>def deflection(w, L, E, I):
-    # simply supported beam, uniform load
-    return 5 * w * L**4 / (384 * E * I)</code></pre>
-        <div class="fields">
-          <label>Load w (kN/m)
-            <input id="w" type="number" value="10" min="0" step="1">
-          </label>
-          <label>Span L (m)
-            <input id="L" type="number" value="5" min="0.1" step="0.5">
-          </label>
-          <label>E (GPa)
-            <input id="E" type="number" value="200" min="1" step="10">
-          </label>
-          <label>I (cm⁴)
-            <input id="I" type="number" value="8000" min="1" step="500">
-          </label>
+        <p class="status"><span class="dot"></span>Open to internships</p>
+        <h1>Civil engineer.<br>Python builder.</h1>
+        <p class="sub">I'm YOUR NAME. I study how structures carry load, and I write Python to make the maths faster, clearer and easier to check.</p>
+        <div class="actions">
+          <a class="btn primary" href="#work">View projects</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
         </div>
-        <svg class="beam" viewBox="0 0 300 70" aria-hidden="true">
-          <path id="curve" d="M20 20 Q150 20 280 20" fill="none" stroke="#12263A" stroke-width="4" stroke-linecap="round"/>
-          <polygon points="20,26 10,44 30,44" fill="#1F4E79"/>
-          <polygon points="280,26 270,44 290,44" fill="#1F4E79"/>
-        </svg>
-        <div class="result">Maximum deflection: <strong id="out">0.00 mm</strong></div>
       </div>
-    </section>
+      <svg class="truss" viewBox="0 0 600 220" aria-hidden="true">
+        <g class="draw" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path pathLength="1" d="M40 170H560"/>
+          <path pathLength="1" d="M40 170L140 80H460L560 170"/>
+          <path pathLength="1" d="M140 80V170M300 80V170M460 80V170"/>
+          <path pathLength="1" d="M140 170L300 80L460 170"/>
+        </g>
+        <g class="supports"><path d="M40 170l-14 24h28zM560 170l-14 24h28z"/></g>
+        <path class="water" d="M0 205q30-8 60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0" fill="none"/>
+      </svg>
+    </div>
+  </section>
 
-    <!-- PROJECTS -->
-    <section id="work" class="block">
-      <h2>Projects</h2>
-      <p class="lead">Replace these examples with your own work. Add a photo for each in the images folder.</p>
-      <div class="projects">
-        <article class="project">
+  <!-- ABOUT -->
+  <section id="about" class="block about">
+    <div class="avatar" aria-hidden="true">YN</div>
+    <div>
+      <h2>About me</h2>
+      <p class="lead">I'm a civil engineering student from Kathmandu who enjoys structures, surveying and problem solving. Along the way I found Python, and now I automate the calculations I used to do by hand.</p>
+      <p class="lead">My goal is to become an engineer who designs safe structures and builds the digital tools to check them.</p>
+      <div class="stats">
+        <div><strong>5+</strong><span>Python projects</span></div>
+        <div><strong>3</strong><span>Design studies</span></div>
+        <div><strong>1</strong><span>Dream: build bridges</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="work" class="block">
+    <h2>Selected projects</h2>
+    <p class="lead">Replace these examples with your own work.</p>
+    <div class="projects">
+      <article class="project">
+        <div class="thumb"><code>truss_analyser.py</code></div>
+        <div class="body">
           <h3>Truss analyser</h3>
-          <p>A Python script that finds the force in each member of a simple truss using the method of joints.</p>
-          <p class="tags">Python, NumPy, Matplotlib</p>
+          <p>Finds the force in every member of a simple truss using the method of joints.</p>
+          <p class="tags"><span>Python</span><span>NumPy</span><span>Matplotlib</span></p>
           <a href="https://github.com/YOUR-USERNAME/truss-analyser">View on GitHub</a>
-        </article>
-        <article class="project">
+        </div>
+      </article>
+      <article class="project">
+        <div class="thumb alt"><code>concrete_mix.py</code></div>
+        <div class="body">
           <h3>Concrete mix calculator</h3>
-          <p>Calculates cement, sand, aggregate and water quantities for a chosen concrete grade.</p>
-          <p class="tags">Python, Pandas</p>
+          <p>Works out cement, sand, aggregate and water for a chosen concrete grade.</p>
+          <p class="tags"><span>Python</span><span>Pandas</span></p>
           <a href="https://github.com/YOUR-USERNAME/concrete-mix">View on GitHub</a>
-        </article>
-        <article class="project">
+        </div>
+      </article>
+      <article class="project">
+        <div class="thumb warm"><code>footbridge.dwg</code></div>
+        <div class="body">
           <h3>Footbridge design study</h3>
-          <p>A college project designing a small pedestrian bridge, including load estimates and drawings.</p>
-          <p class="tags">AutoCAD, Excel, Design</p>
+          <p>A college project designing a small pedestrian bridge with load estimates and drawings.</p>
+          <p class="tags"><span>AutoCAD</span><span>Excel</span></p>
           <a href="#contact">Ask me about it</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="block">
-      <h2>Skills</h2>
-      <div class="skills">
-        <div>
-          <h3>Civil engineering</h3>
-          <ul>
-            <li>Structural analysis</li>
-            <li>Surveying</li>
-            <li>Concrete and steel design basics</li>
-            <li>AutoCAD</li>
-          </ul>
         </div>
-        <div>
-          <h3>Python</h3>
-          <ul>
-            <li>NumPy and Pandas</li>
-            <li>Matplotlib charts</li>
-            <li>Automating calculations</li>
-            <li>Git and GitHub</li>
-          </ul>
-        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="block">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div>
+        <h3>Civil engineering</h3>
+        <div class="bar"><label>Structural analysis</label><i data-level="80"></i></div>
+        <div class="bar"><label>Surveying</label><i data-level="75"></i></div>
+        <div class="bar"><label>AutoCAD</label><i data-level="70"></i></div>
+        <div class="bar"><label>Concrete and steel design</label><i data-level="60"></i></div>
       </div>
-    </section>
+      <div>
+        <h3>Python</h3>
+        <div class="bar"><label>Core Python</label><i data-level="85"></i></div>
+        <div class="bar"><label>NumPy and Pandas</label><i data-level="70"></i></div>
+        <div class="bar"><label>Matplotlib</label><i data-level="70"></i></div>
+        <div class="bar"><label>Git and GitHub</label><i data-level="65"></i></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="block contact">
-      <h2>Contact</h2>
-      <p class="lead">Looking for an internship or a project partner? Send me a message.</p>
-      <a class="btn" href="mailto:youremail@example.com">youremail@example.com</a>
-      <p class="links">
-        <a href="https://github.com/YOUR-USERNAME">GitHub</a>
-        <a href="https://www.linkedin.com/in/YOUR-USERNAME">LinkedIn</a>
-      </p>
-    </section>
-  </main>
+  <!-- LAB -->
+  <section id="lab" class="block lab">
+    <div>
+      <h2>Try the maths</h2>
+      <p class="lead">Change the numbers and see how much a simply supported beam bends. The formula is the same Python I use in my projects.</p>
+      <pre class="code"><code>def deflection(w, L, E, I):
+    return 5 * w * L**4 / (384 * E * I)</code></pre>
+    </div>
+    <div class="calc">
+      <div class="fields">
+        <label>Load w (kN/m)<input id="w" type="number" value="10" min="0" step="1"></label>
+        <label>Span L (m)<input id="L" type="number" value="5" min="0.1" step="0.5"></label>
+        <label>E (GPa)<input id="E" type="number" value="200" min="1" step="10"></label>
+        <label>I (cm⁴)<input id="I" type="number" value="8000" min="1" step="500"></label>
+      </div>
+      <svg class="beam" viewBox="0 0 300 70" aria-hidden="true">
+        <path id="curve" d="M20 20 Q150 20 280 20" fill="none" stroke="#12263A" stroke-width="4" stroke-linecap="round"/>
+        <polygon points="20,26 10,44 30,44" fill="#1F4E79"/>
+        <polygon points="280,26 270,44 290,44" fill="#1F4E79"/>
+      </svg>
+      <div class="result">Maximum deflection<strong id="out">0.00 mm</strong></div>
+    </div>
+  </section>
 
-  <footer>© <span id="year"></span> YOUR NAME</footer>
-  <script src="script.js"></script>
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Let's build something</h2>
+    <p>Looking for an intern, a project partner or just a chat about bridges and Python?</p>
+    <a class="btn primary" href="mailto:youremail@example.com">youremail@example.com</a>
+    <p class="links">
+      <a href="https://github.com/YOUR-USERNAME">GitHub</a>
+      <a href="https://www.linkedin.com/in/YOUR-USERNAME">LinkedIn</a>
+    </p>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> YOUR NAME</footer>
+<script src="script.js"></script>
 </body>
 </html>
