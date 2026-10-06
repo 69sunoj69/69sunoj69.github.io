@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YOUR NAME | Civil Engineering & Python</title>
+  <meta name="description" content="Portfolio of a civil engineering student who codes in Python.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a href="#top" class="brand">YOUR NAME</a>
+    <nav>
+      <a href="#work">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>I design structures<br>and write the code<br>that checks them.</h1>
+        <p>Hi, I'm YOUR NAME, a civil engineering student learning Python to make engineering calculations faster, clearer and less error-prone.</p>
+        <a class="btn" href="#work">See my projects</a>
+      </div>
+
+      <!-- Interactive beam calculator: the memorable part -->
+      <div class="calc" aria-label="Beam deflection calculator">
+        <div class="calc-title">Try it: beam deflection</div>
+        <pre class="code"><code>def deflection(w, L, E, I):
+    # simply supported beam, uniform load
+    return 5 * w * L**4 / (384 * E * I)</code></pre>
+        <div class="fields">
+          <label>Load w (kN/m)
+            <input id="w" type="number" value="10" min="0" step="1">
+          </label>
+          <label>Span L (m)
+            <input id="L" type="number" value="5" min="0.1" step="0.5">
+          </label>
+          <label>E (GPa)
+            <input id="E" type="number" value="200" min="1" step="10">
+          </label>
+          <label>I (cm⁴)
+            <input id="I" type="number" value="8000" min="1" step="500">
+          </label>
+        </div>
+        <svg class="beam" viewBox="0 0 300 70" aria-hidden="true">
+          <path id="curve" d="M20 20 Q150 20 280 20" fill="none" stroke="#12263A" stroke-width="4" stroke-linecap="round"/>
+          <polygon points="20,26 10,44 30,44" fill="#1F4E79"/>
+          <polygon points="280,26 270,44 290,44" fill="#1F4E79"/>
+        </svg>
+        <div class="result">Maximum deflection: <strong id="out">0.00 mm</strong></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="work" class="block">
+      <h2>Projects</h2>
+      <p class="lead">Replace these examples with your own work. Add a photo for each in the images folder.</p>
+      <div class="projects">
+        <article class="project">
+          <h3>Truss analyser</h3>
+          <p>A Python script that finds the force in each member of a simple truss using the method of joints.</p>
+          <p class="tags">Python, NumPy, Matplotlib</p>
+          <a href="https://github.com/YOUR-USERNAME/truss-analyser">View on GitHub</a>
+        </article>
+        <article class="project">
+          <h3>Concrete mix calculator</h3>
+          <p>Calculates cement, sand, aggregate and water quantities for a chosen concrete grade.</p>
+          <p class="tags">Python, Pandas</p>
+          <a href="https://github.com/YOUR-USERNAME/concrete-mix">View on GitHub</a>
+        </article>
+        <article class="project">
+          <h3>Footbridge design study</h3>
+          <p>A college project designing a small pedestrian bridge, including load estimates and drawings.</p>
+          <p class="tags">AutoCAD, Excel, Design</p>
+          <a href="#contact">Ask me about it</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="block">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div>
+          <h3>Civil engineering</h3>
+          <ul>
+            <li>Structural analysis</li>
+            <li>Surveying</li>
+            <li>Concrete and steel design basics</li>
+            <li>AutoCAD</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Python</h3>
+          <ul>
+            <li>NumPy and Pandas</li>
+            <li>Matplotlib charts</li>
+            <li>Automating calculations</li>
+            <li>Git and GitHub</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="block contact">
+      <h2>Contact</h2>
+      <p class="lead">Looking for an internship or a project partner? Send me a message.</p>
+      <a class="btn" href="mailto:youremail@example.com">youremail@example.com</a>
+      <p class="links">
+        <a href="https://github.com/YOUR-USERNAME">GitHub</a>
+        <a href="https://www.linkedin.com/in/YOUR-USERNAME">LinkedIn</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> YOUR NAME</footer>
+  <script src="script.js"></script>
+</body>
+</html>
