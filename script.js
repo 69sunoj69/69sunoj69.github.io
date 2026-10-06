@@ -27,3 +27,17 @@ ids.forEach(id => inputs[id].addEventListener("input", update));
 update();
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Sticky nav gets a background after scrolling
+const nav = document.getElementById("nav");
+const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
+window.addEventListener("scroll", onScroll);
+onScroll();
+
+// Skill bars fill when they scroll into view
+const bars = document.querySelectorAll(".bar i");
+bars.forEach(b => b.style.setProperty("--w", b.dataset.level + "%"));
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("go"); io.unobserve(e.target); } });
+}, { threshold: 0.4 });
+bars.forEach(b => io.observe(b));
